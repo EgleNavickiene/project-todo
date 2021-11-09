@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Task } from './interfaces/task';
+import { TaskService } from './services/task.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'project-todo';
+
+  public tasks: Task[] = [];
+
+  constructor(private _taskService: TaskService) {
+    
+    this._taskService.getTasks()
+    .subscribe((data: Task[]) => {
+      this.tasks = data;
+    });
+  }
 }
