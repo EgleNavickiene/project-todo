@@ -5,7 +5,7 @@
         <h1 class="mt-5 mb-5 text-success text-center">Todo List</h1>
      
       <div class="col-lg-8 col-md-12">
-        <table class="table">
+        <table class="table my-table">
             <thead>
               <tr class="text-light bg-success">
                 <th></th>
@@ -14,7 +14,7 @@
                 <th>ID</th>
               </tr>
             </thead>
-            <tr *ngFor="let task of tasks">
+            <tr class="my-table table-row" *ngFor="let task of tasks">
               <td>
                 <!-- Ateityje si elementa naudosime, pazymeti uzduotis kaip baigtas -->
                 <input type="checkbox">
