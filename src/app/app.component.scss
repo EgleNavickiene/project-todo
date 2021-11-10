@@ -2,10 +2,13 @@
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     .my-table .table-row {
         border-top: green 1px solid;
-        border-bottom: green 1px solid;
-
-        
+        border-bottom: green 1px solid;        
     }
+
+    .task-completed {
+        text-decoration: line-through;
+        color: rgb(15, 184, 190) ;
+      }
         
     
     }

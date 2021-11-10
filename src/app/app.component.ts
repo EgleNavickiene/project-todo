@@ -19,4 +19,14 @@ export class AppComponent {
       this.tasks = data;
     });
   }
+
+  toggleTask(task: Task) {
+    //keicia true/false 
+    task.completed = !task.completed;
+
+    this._taskService.toggleTask(task)
+    .subscribe((data: any) => {
+      console.log(data);
+    });
+  }
 }
