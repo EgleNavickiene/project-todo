@@ -22,15 +22,15 @@ export class TaskService {
 
   toggleTask(task: Task) {
 
-    let uri = this.apiUrl + "/" + task.id;
-      console.log("1 budas: " + uri);
+    //let uri = this.apiUrl + "/" + task.id;
+      //console.log("1 budas: " + uri);
 
     let uri2 = `${this.apiUrl}/${task.id}`;
       console.log("2 budas: " + uri2);
 
       let body = {completed: task.completed};
 
-      return this.http.patch(uri, body);
+      return this.http.patch(uri2, body);
   }
 
   createTask(){
