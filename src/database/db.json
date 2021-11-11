@@ -18,5 +18,17 @@
       "author": "eimantas",
       "completed": false
     }
-  ]  
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "Test",
+      "email": "labas@email.com"
+    },
+    {
+      "id": 2,
+      "name": "Test-2",
+      "email": "labas123@email.com"
+    }
+  ]
 }
