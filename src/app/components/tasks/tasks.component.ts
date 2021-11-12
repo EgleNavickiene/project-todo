@@ -3,7 +3,7 @@ import { Task } from 'src/app/interfaces/task';
 import { TaskService } from 'src/app/services/task.service';
 
 @Component({
-  selector: 'app-todo-list',
+  selector: 'app-tasks',
   templateUrl: './tasks.component.html',
   styleUrls: ['./tasks.component.scss']
 })
