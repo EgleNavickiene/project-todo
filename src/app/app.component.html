@@ -1,84 +1,46 @@
-<!--json serveris:=b   json-server --watch src/database/db.json -->
-<div class="container">
-    <div class="row justify-content-center">
-      
-        <h1 class="mt-5 mb-5 text-success text-center">
-          <i class="bi bi-activity text-info"></i>
-          Todo List</h1>
-     
-      <div class="col-lg-8 col-md-12">
-        <table class="table my-table table-bordered">
-            <thead>
-              <tr class="text-light bg-success">
-                <th></th>
-                <th>Task Title</th>
-                <th>Author</th>
-                <th>ID</th>
-              </tr>
-            </thead>
-            <tr class="my-table table-row" *ngFor="let task of tasks"
-            [class.task-completed]="task.completed">
-              <!-- [class.text-decoration-line-through]="task.completed"
-              (click)="task.completed = !task.completed" -->
-            
-              <td class="text-center">
-                <!-- Ateityje si elementa naudosime, pazymeti uzduotis kaip baigtas -->
-                <input type="checkbox" [checked]="task.completed"
-                (change)="toggleTask(task)"
-                >
-              </td>
-              <td class="ps-2">{{ task.title }}</td>
-              <td class="ps-2">Author: {{ task.author }}</td>
-              <td class="ps-2">{{ task.id }}</td>
-            </tr>
-          </table>
-      </div> 
-      <p></p>
-      <hr>
-      <p></p>
-      <div class="row d-flex justify-content-center container">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-header-title font-size-lg text-capitalize font-weight-normal">
-                        <i class="fa fa-tasks"></i>
-                        &nbsp;Task List
-                    </div>
-                    <div class="card-body list-area">
-                      <div class="col-12">
-                        <table class="table my-table table-bordered">
-                            <thead>
-                              <tr class="text-light bg-success">
-                                <th></th>
-                                <th>Task Title</th>
-                                <th>Author</th>
-                                <th>ID</th>
-                              </tr>
-                            </thead>
-                            <tr class="my-table table-row" *ngFor="let task of tasks"
-                            [class.task-completed]="task.completed">
-                              <!-- [class.text-decoration-line-through]="task.completed"
-                              (click)="task.completed = !task.completed" -->
-                            
-                              <td class="text-center">
-                                <!-- Ateityje si elementa naudosime, pazymeti uzduotis kaip baigtas -->
-                                <input type="checkbox" [checked]="task.completed"
-                                    (change)="toggleTask(task)"
-                                >
-                              </td>
-                              <td class="ps-2">{{ task.title }}</td>
-                              <td class="ps-2">Author: {{ task.author }}</td>
-                              <td class="ps-2">{{ task.id }}</td>
-                            </tr>
-                          </table>
-                      </div> 
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-      
-    </div>
-  </div>
 
-<router-outlet></router-outlet>
+<nav class="navbar navbar-light bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <a class="navbar-brand" href="#">
+            <img src="https://bit.lt/img/BIT_bl-RGB.png" width="100" class="d-inline-block align-top" alt="">
+            Todo List
+          </a>
+        </div>
+      </div>
+    </div>
+  
+  </nav>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-2 bg-dark pt-3">
+        <div class="card mt-3">
+          <div class="card-header">
+            Meniu
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <a routerLink="">Tasks</a>
+            </li>
+            <li class="list-group-item">
+              <a routerLink="users">Users</a>
+            </li>
+            <li class="list-group-item">
+              Stats
+              <span class="position-absolute top-20 start-100 translate-middle badge rounded-pill bg-success">
+              Coming Soon!
+              </span>
+  
+            </li>
+          </ul>
+        </div>
+      </div>
+  
+      <div class="col-sm-10">
+        <router-outlet></router-outlet>
+  
+      </div>
+    </div>
+  
+  </div>

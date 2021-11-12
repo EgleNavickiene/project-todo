@@ -20,6 +20,10 @@ export class AppComponent {
     });
   }
 
+  getTask() {  
+      
+  }
+
   toggleTask(task: Task) {
     //keicia true/false 
     task.completed = !task.completed;
@@ -29,4 +33,6 @@ export class AppComponent {
       console.log(data);
     });
   }
+
+  
 }

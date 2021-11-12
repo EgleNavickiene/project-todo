@@ -4,17 +4,22 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { TodoListComponent } from './components/todo-list/todo-list.component';
+
+import { TaskCreateComponent } from './components/task-create/task-create.component';
+import { FormsModule } from '@angular/forms';
+import { TasksComponent } from './components/tasks/tasks.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TodoListComponent
+    TasksComponent,
+    TaskCreateComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
