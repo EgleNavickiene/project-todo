@@ -40,12 +40,12 @@
   "users": [
     {
       "id": 1,
-      "name": "Test",
+      "name": "Test-user1",
       "email": "labas-dienas@email.com"
     },
     {
       "id": 2,
-      "name": "Test-2",
+      "name": "Test-user2",
       "email": "labas123@gmail.com"
     }
   ]

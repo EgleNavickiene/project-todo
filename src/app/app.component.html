@@ -3,9 +3,12 @@
     <div class="container">
       <div class="row d-flex col-12">
         <div class="col-2 align-content-center">
-          <a class="navbar-brand" href="#">
-            <img src="/assets/img/logo2.png" width="100" class="d-inline-block align-top" alt="">            
-          </a>            
+          <div class="img-fluid text-center">
+            <a class="navbar-brand m-0" href="#">
+              <img src="/assets/img/logo2.png" width="100" class="d-inline-block align-top" alt="">            
+            </a> 
+          </div>
+                     
         </div>
         <div class="col-10">
           <h5>Todo List</h5>
@@ -22,16 +25,18 @@
             Menu
           </div>
           <ul class="list-group list-group-flush">
-            <li class="list-group-item">
-              <a routerLink="">Tasks</a>
+            <li class="list-group-item nav-item text-center">
+              <a routerLink="" 
+              class="text-decoration-none text-success">Tasks</a>
+            </li>
+            <li class="list-group-item nav-item text-center">
+              <a routerLink="users" 
+              class="text-decoration-none text-success">Users</a>
             </li>
             <li class="list-group-item">
-              <a routerLink="users">Users</a>
-            </li>
-            <li class="list-group-item">
-              Stats
-              <span class="position-absolute top-20 start-100 translate-middle badge rounded-pill bg-success">
-              Coming Soon!
+              Stats 
+              <span class="badge rounded-pill bg-success border border-warning text-warning">
+              Coming <br> Soon!
               </span>
   
             </li>

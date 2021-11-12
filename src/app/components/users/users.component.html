@@ -1,1 +1,7 @@
 <p>users works!</p>
+
+<div class="row">
+    <div class="col-12" *ngFor="let user of users">
+      <p>{{user.name}}, id-{{user.id}}, {{user.email}}</p>  
+    </div>
+</div>
