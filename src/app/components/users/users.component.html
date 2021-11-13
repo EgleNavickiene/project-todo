@@ -1,38 +1,54 @@
-<div class="row">
-  <app-user-create (newItemEvent)="getUsers()"></app-user-create>
-</div>
+<div class="container">
+  <div class="row">
+    <app-user-create (newItemEvent)="getUsers()"></app-user-create>
+  </div>
+  
+  <div class="row">
+    
+    <div class="col-6 d-flex mt-3 " *ngFor="let user of users">
+      <div class="card border-success border-1">
+        <div class="row ">
+          <div class="col-4 card-img-left   bg-success ">
+    
+            <!--VERTIKALIAM img lygiavimui:
+                d-flex justify-content-center align-items-center h-100 -->
+            <div class="text-center  d-flex justify-content-center align-items-center h-100">
+    
+              <!-- img-fluid - ANT IMG, ne ant jo parent reikia dėti -->
+              <img src="/assets/img/blank-profile-picture.png" 
+              class="img-fluid " alt="user-img">
+            </div>
+          </div>
+          <div class="col-8 ">
 
-<div class="row">
-  <div class="col-6 d-flex mb-3 " *ngFor="let user of users">
-    <div class="row">
-      <div class="col-4 card-img-left">
-        <div class="text-center d-flex justify-content-center align-items-center h-100">
-          <img src="/assets/img/blank-profile-picture.png" class="img-fluid " alt="user-img">
+            <div class="card-header ">
+              <div class="row ">              
+                <div class="col-12 d-flex bg-light me-0 pe-0 ">
+                  <div class="col-8 text-center text-success align-items-center">                
+                    <h5 class="my-3 ">{{user.name}} </h5>
+                  </div>
+                  <div class="col-4  my-3 ">                    
+                    <button (click)="deleteUser(user)" class="btn btn-danger bg-danger">
+                      <i class="bi bi-trash-fill "></i>
+                    </button>
+                  </div>
+                </div>
+      
+            </div>
+            </div>
+            
+          <div class="row">
+            <div class="col-12">
+              <p>id: {{user.id}}</p>
+              <p>e-mail: <br> {{user.email}}</p>
+            </div>
+          </div>
         </div>
+    
       </div>
-      <div class="col-8 ">
-        <div class="row d-flex card-header">
-          <div class="col-8  text-center text-success">
-            <h5>{{user.name}} </h5>
-          </div>
-          <div class="col-4">
-            <!-- (click)="deleteUser(user)" -->
-            <button (click)="deleteUser(user)" class="btn btn-danger bg-danger">
-              <i class="bi bi-trash-fill"></i>
-            </button>
-          </div>
-
-
-        <div class="row">
-          <div class="col-12">
-            <p>id: {{user.id}}</p>
-            <p>e-mail: <br> {{user.email}}</p>
-          </div>
-        </div>
-
-
       </div>
-    </div>
 
   </div>
 </div>
+
+
