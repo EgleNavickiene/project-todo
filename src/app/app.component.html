@@ -17,37 +17,44 @@
     </div>  
 </nav>
 
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-2 bg-success pt-3">
-        <div class="card mt-3">
-          <div class="card-header">
-            Menu
-          </div>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item nav-item text-center">
-              <a routerLink="" 
-              class="text-decoration-none text-success">Tasks</a>
-            </li>
-            <li class="list-group-item nav-item text-center">
-              <a routerLink="users" 
-              class="text-decoration-none text-success">Users</a>
-            </li>
-            <li class="list-group-item">
-              Stats 
-              <span class="badge rounded-pill bg-success border border-warning text-warning">
-              Coming <br> Soon!
-              </span>
-  
-            </li>
-          </ul>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-2 bg-success pt-3">
+      <div class="card mt-3">
+        <div class="card-header">
+          Menu
         </div>
-      </div>
-  
-      <div class="col-sm-10">
-        <router-outlet></router-outlet>
-  
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item nav-item text-center">
+            <a routerLink="" 
+            class="text-decoration-none text-success">Tasks</a>
+          </li>
+          <li class="list-group-item nav-item text-center">
+            <a routerLink="users" 
+            class="text-decoration-none text-success">Users</a>
+          </li>
+          <li class="list-group-item">
+            Stats 
+            <span class="badge rounded-pill bg-success border border-warning text-warning">
+            Coming <br> Soon!
+            </span>
+
+          </li>
+        </ul>
       </div>
     </div>
-  
+
+    <div class="col-sm-10">
+      <div>
+        <h1 class="mt-5 mb-2 text-success text-center">
+          <i class="bi bi-activity text-info"></i>
+          Todo List</h1>          
+        <hr class="my-4">
+      </div>
+      <div>
+        <router-outlet></router-outlet>
+      </div> 
+    </div>
   </div>
+
+</div>

@@ -19,6 +19,20 @@ export class UserService {
 
     return this.http.get<User[]>(uri);
   };   
+
+  createUser(user: User) {
+    let uri = this.apiUrl;
+
+    return this.http.post(uri, user);
+  }
+
+  deleteUser(user: User) {
+    let uri = this.apiUrl + "/" + user.id;
+
+    return this.http.delete(uri);
+  }
+
+  
 }
 
 

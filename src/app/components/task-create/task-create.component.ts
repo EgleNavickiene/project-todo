@@ -1,7 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Task } from 'src/app/interfaces/task';
 import { TaskService } from 'src/app/services/task.service';
-import { switchMap, tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-task-create',
@@ -18,7 +17,6 @@ export class TaskCreateComponent implements OnInit {
 
   @Output() newItemEvent = new EventEmitter();
 
-
   constructor(private _taskService: TaskService) { }
 
   ngOnInit(): void {
@@ -27,10 +25,12 @@ export class TaskCreateComponent implements OnInit {
   taskCreate() {
     console.log("form submit works");
     console.log(this.task);
+
     this._taskService.createTask(this.task)
       .subscribe((data : any ) => {
         alert("Task succesfully added!");
         console.log(data);
+        
         this.newItemEvent.emit(data);
       });
   }

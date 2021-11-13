@@ -47,6 +47,16 @@
       "id": 2,
       "name": "Test-user2",
       "email": "labas123@gmail.com"
+    },
+    {
+      "name": "test-user3",
+      "email": "test-email3@gmail.com",
+      "id": 3
+    },
+    {
+      "name": "test-user4",
+      "email": "test-email4@gmail.com",
+      "id": 4
     }
   ]
 }

@@ -27,4 +27,8 @@ export class UsersComponent implements OnInit {
       console.log(this.users)
     });
   }
+
+  deleteUser(user: User) {
+    alert("delete?");
+  }
 }
