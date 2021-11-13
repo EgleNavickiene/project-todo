@@ -28,7 +28,7 @@ export class UserCreateComponent implements OnInit {
 
     this._userService.createUser(this.user)
     .subscribe((data: any) =>{
-      alert("new User succesfully created");
+      console.log("user created");
       console.log(data);
       
       this.newItemEvent.emit(data);

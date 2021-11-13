@@ -30,5 +30,13 @@ export class UsersComponent implements OnInit {
 
   deleteUser(user: User) {
     alert("delete?");
+
+    this._userService.deleteUser(user)
+    .subscribe(data => {
+      console.log("user deleted: ")
+      console.log(data);
+
+      this.getUsers();
+    })
   }
 }
