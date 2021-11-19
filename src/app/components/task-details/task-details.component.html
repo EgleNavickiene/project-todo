@@ -1,0 +1,39 @@
+
+<div class="task-details-container card h-100">
+    <div class="card-header">
+        <h4>{{task?.title}}</h4>
+    </div>
+
+    <div class="card-body mb-4">
+        <div>Author: <strong> {{task?.author}}</strong></div>
+        <div> task Id: <strong> {{task?.id}}</strong></div>
+      
+       <hr>
+
+       <div class="comments">
+           
+           <form action="">
+              <textarea placeholder="Add a comment" class="form-control"></textarea>
+              <h6 class="mb-3 mt-3">Add a comment</h6>
+              <input type="submit" class="btn btn-sm btn-secondary">
+           </form>
+        
+        </div>
+    </div>
+
+    
+
+    <div class="card-footer">
+        <button type="button" class="btn btn-sm btn-secondary me-3" 
+        (click)="closeTaskDetails()">
+            Close
+        </button>
+
+        <button type="button" class="btn btn-sm btn-secondary"  >
+            Delete <small>(TODO)</small>
+        </button>
+    </div>
+    
+</div>
+
+

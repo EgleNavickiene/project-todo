@@ -3,10 +3,7 @@
 
 <div class="container">
     <div class="row justify-content-center">
-      
-      
-      
-
+    
       <app-task-create (newItemEvent)="getTasks()"></app-task-create>
       
       <hr class="mb-4">
@@ -20,16 +17,16 @@
                         <h4>Task List</h4>
                     </div>
                     <div class="card-body list-area">
-                      <div class="col-12">        
-                        <!--  -->
-                        <!-- <app-task-create></app-task-create> -->
+                      <div class="col-12">                       
+                        
                         <table class="table my-table table-bordered">
                             <thead>
                               <tr class="text-light bg-success">
+                                <th class="text-center">Priority</th>
                                 <th></th>
                                 <th>Task Title</th>
                                 <th>Author</th>
-                                <th>ID</th>
+                                <th class="text-center">ID</th>
                                 <th></th>
                               </tr>
                             </thead>
@@ -40,31 +37,48 @@
                             [class.task-completed]="task.completed">
                               <!-- [class.text-decoration-line-through]="task.completed"
                               (click)="task.completed = !task.completed" -->
-                            
+                              <td class="ms-3">{{task.priority}}</td>
                               <td class="text-center">
                                 <!-- Ateityje si elementa naudosime, pazymeti uzduotis kaip baigtas -->
                                 <input type="checkbox" [checked]="task.completed"
                                     (change)="toggleTask(task)"
                                 >
                               </td>
-                              <td><i class="bi-alarm"></i> {{ task.title }}</td>
+                              <td ><i class="bi-alarm"></i>
+                                <span (click)="toggleTaskDetails(task)" 
+                                class="task-details-toggle-button">
+                                  {{ task.title }}
+                                </span>
+                                 
+                              </td>
                               <td><i class="bi bi-activity"></i> Author: {{ task.author }}</td>
-                              <td>{{ task.id }}</td>
-                              <td>
+                              <td class="text-center">{{ task.user?.email }}</td>
+                              <td class="text-center">
                                 <button
                                 (click)="deleteTask(task)"
-                                class="btn btn-danger bg-danger">
+                                class="btn btn-danger bg-danger ">
                                   <i class="bi bi-trash-fill"></i>
                                 </button>
                               </td>
                             </tr>
-                          </table>
+                        </table>
                       </div> 
                     </div>
                 </div>
             </div>
         </div>
-      </div>
-      
+      </div>      
     </div>
+</div>
+
+<div class="task-details-container" *ngIf="showTaskDetails">                  
+  <app-task-details [task]="selectedTask"  
+  class="task-details-container" 
+    (taskDetailsCloseEvent)="toggleTaskDetails(null, true)">
+  </app-task-details>
+
+  <div class="task-details-overlay" (click) ="showTaskDetails = false">
+
+  </div>
+
 </div>

@@ -2,41 +2,118 @@
 <div class="ms-4">
   <h4>Create Task</h4>
 </div>
-<hr  class="mt-4">
+
+<!-- errors pranešimai -->
+<div class="alert alert-danger" *ngIf="taskForm.submitted && taskForm.invalid">  
+  <!-- Div'as naudojams klaidoms atvaizduoti -->
+  <div *ngIf="title.errors?.['minlength']">
+    Title must be min 4 symbols lenght
+  </div>
+
+  <div *ngIf="title.errors?.['required']">
+    Task title is required
+  </div>
+
+  <div *ngIf="author.errors?.['required']">
+    Author name is required
+  </div>
+
+  <div *ngIf="priority.errors?.['required']">
+    Priority select is required
+  </div>
+  
+</div>
   
 <div class="container">
   <div class="mb-5">
-    <form (ngSubmit)="taskCreate()">
+    <!-- #taskForm - lokalus template kintamasis (pasiekiamas tik siame html faile)
+    ngForm - pasakoma, kad sis kintamasis saugo visos formos duomenis
+    -->
+
+     <!-- Formos laukelio validacija -->
+        <!-- #title - lokalus template kintamasis (pasiekiams tik siame html faile) -->
+        <!-- #title="ngModel" - jo tipas nusako, kad tai reiksme, kuri nustatoma laukeliui, per [(ngModel)] -->
+        <!-- [class.is-valid]="title.valid"] prideti klase elementui, pagal tam tikra salyga -->
+
+    <form (ngSubmit)="taskCreate(taskForm)" #taskForm="ngForm">
       <div class="row">
         <div class="col-4">
           <div class="form-group">
-            <!-- [(ngModel)] -->
+            <!-- Formos laukelio validacija -->
+            <!-- #title - lokalus template kintamasis (pasiekiams tik siame html faile) -->
+            <!-- #title="ngModel" - jo tipas nusako, kad tai reiksme, kuri nustatoma laukeliui, per [(ngModel)] -->
+            <!-- [class.is-valid]="title.valid"] prideti klase elementui, pagal tam tikra salyga -->
             <input type="text"
             [(ngModel)]="task.title"
-            placeholder="Enter Task name"
+            placeholder="Enter Task title"
             name="title"
-            class="form-controll" />
+            #title="ngModel"
+            class="form-control is-valid"
+            [class.is-valid]="title.valid"
+            [class.is-invalid]="title.invalid && taskForm.submitted"
+            minlength="4"
+            required
+            />
+
+            <!-- Div'as naudojamas atvaizduoti, kad laukelis yra uzpildytas teisingai -->
+            <div *ngIf="title.valid && title.dirty" class="valid-feedback">
+              Looks good!
+            </div>
+            
           </div>
         </div>
-    
+
         <div class="col-4">
           <div class="form-group">
             <input type="text"
             placeholder="Enter Author name"
             [(ngModel)]="task.author"
             name="author"
-            class="form-controll" />
+            required
+            #author="ngModel"
+            class="form-control"
+            class="form-control is-valid"
+            [class.is-valid]="author.valid"
+            [class.is-invalid]="author.invalid && taskForm.submitted" />
           </div>
         </div>
-    
+
+        <!--  -->
         <div class="col-4">
+          <select name="priority" [(ngModel)]="task.priority" class="form-select"
+          required
+          [class.is-valid]="priority.valid"
+          [class.is-invalid]="priority.invalid && taskForm.submitted"
+          #priority="ngModel"
+          >
+            [(ngModel)]="task.priority"
+            <!-- Perduodame su ngValue string reiksme -->
+            <option value="" disabled>Select priority</option>
+            <option value="high" ngValue="high">High</option>
+            <!-- Perduodame su [ngValue] string reiksme kaip kintamaji -->
+            <option value="low" [ngValue]="'low'">Low</option>
+          </select>
+        </div>
+
+        <!-- userId input select -->
+        
+        <div class="col-6 mt-3">
           <div class="form-group">
-            <input type="submit" class="btn btn-success" value="Add Task">
+            <input type="submit" class="btn btn-success "        
+            value="Add Task">
+            <!-- disabled
+            [disabled]="taskForm.invalid" -->
+
+            <input type="button" class="btn btn-secondary ms-3 px-lg-1"
+            (click)="taskForm.resetForm()"
+            value="Reset Form"
+            >
           </div>
         </div>
-      </div>  
+      </div>
     </form>
   </div>
   
 </div>
+
 

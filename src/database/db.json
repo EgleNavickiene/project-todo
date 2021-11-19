@@ -4,31 +4,36 @@
       "id": 1,
       "title": "json-server",
       "author": "typicode",
-      "completed": false
+      "completed": false,
+      "userId": 1
     },
     {
       "id": 2,
       "title": "json-server",
       "author": "eimantas",
-      "completed": true
+      "completed": true,
+      "userId": 2
     },
     {
       "id": 3,
       "title": "dar vienas postas",
       "author": "eimantas",
-      "completed": false
-    },
-    {
-      "title": "fff",
-      "completed": true,
-      "author": "eee",
-      "id": 5
-    },
-    {
-      "title": "one",
       "completed": false,
-      "author": "me1",
-      "id": 6
+      "userId": 3
+    },
+    {
+      "title": "Pamokos perziura",
+      "completed": true,
+      "author": "Egle",
+      "priority": "high",
+      "userId": 3
+    },
+    {
+      "title": "Pravedint kambari",
+      "completed": false,
+      "author": "Egle",
+      "priority": "low",
+      "id": 5
     }
   ],
   "users": [
@@ -41,12 +46,11 @@
       "id": 2,
       "name": "Test-user2",
       "email": "labas123@gmail.com"
-      
     },
     {
-      "name": "user4",
-      "email": "4user@user.lt",
-      "id": 4
+      "name": "User-3",
+      "email": "333@main.com",
+      "id": 3
     }
   ]
 }

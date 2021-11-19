@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { TasksComponent } from './components/tasks/tasks.component';
 import { UsersComponent } from './components/users/users.component';
 import { UserCreateComponent } from './components/user-create/user-create.component';
+import { TaskDetailsComponent } from './components/task-details/task-details.component';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { UserCreateComponent } from './components/user-create/user-create.compon
     TaskCreateComponent,
     UsersComponent,
     UserCreateComponent,
+    TaskDetailsComponent,
     
   ],
   imports: [

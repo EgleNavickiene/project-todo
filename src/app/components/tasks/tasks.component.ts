@@ -19,6 +19,30 @@ export class TasksComponent implements OnInit {
 
   public tasks: Task[] = [];
 
+  //kintamasis, kuris pasako ar atvaizduoti task-details komponentą 
+  public showTaskDetails : boolean = false;
+
+  //Pasirinkta užduotis, kurios informacija turės būti atvaizduojama
+  //<app-task-details> komponente
+  public selectedTask: Task | null = null;
+
+  toggleTaskDetails(task : Task | null, close : boolean = false) {
+
+    if((this.selectedTask == task || this.showTaskDetails == false ) || this.selectedTask == null) {
+      
+      this.showTaskDetails = !this.showTaskDetails;
+      
+    }
+
+    // force close
+    if(close) {
+      this.showTaskDetails = false;
+    }
+    
+    this.selectedTask = task;
+
+  }
+
   getTasks() {
     // Gauname duomenis is task Service
     this._taskService
@@ -43,7 +67,7 @@ export class TasksComponent implements OnInit {
   }
 
   deleteTask(task: Task) {
-    console.log('Task Will be deleted:');
+    console.log('Task is deleted ');
     console.log(task);
     this._taskService.deleteTask(task).subscribe(data => {
       console.log(data);

@@ -14,9 +14,12 @@ export class TaskService {
   constructor(private http: HttpClient) { }
 
   // Interface'o panaudojimas service dalyje
+      //withUserData
   getTasks() : Observable<Task[]> {
     let uri = this.apiUrl
     // Siuncama get uzklausa i API
+
+    //+expand...
 
     // .get() - gauname duomenis is duombazes
     return this.http.get<Task[]>(uri);
