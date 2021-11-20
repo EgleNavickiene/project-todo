@@ -9,7 +9,7 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class UsersComponent implements OnInit {
 
-  constructor(private _userService: UserService) { 
+   constructor(private _userService: UserService) { 
       this.getUsers()
      }
 
@@ -17,6 +17,11 @@ export class UsersComponent implements OnInit {
   }
 
   public users: User[] = [];
+
+  public newUser: User = {
+    'name': '',
+    'email': ''
+  }
 
   getUsers(){
     this._userService

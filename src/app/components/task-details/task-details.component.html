@@ -5,8 +5,15 @@
     </div>
 
     <div class="card-body mb-4">
-        <div>Author: <strong> {{task?.author}}</strong></div>
-        <div> task Id: <strong> {{task?.id}}</strong></div>
+        <div>
+            Author: <strong> {{task?.author}}</strong>
+        </div>
+        <div> 
+            task completed? <strong> {{task?.completed}}</strong>
+        </div>
+        <div>
+            Assigned to: {{task?.user?.name}}, id: {{task?.user_id}}, {{task?.user?.email}}
+        </div>
       
        <hr>
 

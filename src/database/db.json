@@ -1,39 +1,51 @@
 {
   "tasks": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode",
-      "completed": false,
-      "userId": 1
-    },
-    {
-      "id": 2,
-      "title": "json-server",
-      "author": "eimantas",
-      "completed": true,
-      "userId": 2
-    },
-    {
-      "id": 3,
-      "title": "dar vienas postas",
-      "author": "eimantas",
-      "completed": false,
-      "userId": 3
-    },
-    {
       "title": "Pamokos perziura",
       "completed": true,
       "author": "Egle",
       "priority": "high",
-      "userId": 3
+      "user_id": 3
     },
     {
       "title": "Pravedint kambari",
       "completed": false,
       "author": "Egle",
       "priority": "low",
+      "id": 4,
+      "user_id": 3
+    },
+    {
+      "title": "Uzduotis vartotojui 1",
+      "completed": false,
+      "author": "Egle",
+      "priority": "low",
+      "user_id": "1",
       "id": 5
+    },
+    {
+      "title": "uzduotis be vartotojo",
+      "completed": false,
+      "author": "me1",
+      "priority": "low",
+      "user_id": 0,
+      "id": 6
+    },
+    {
+      "title": "Uzd vartotojui 4",
+      "completed": false,
+      "author": "meee",
+      "priority": "low",
+      "user_id": "4",
+      "id": 7
+    },
+    {
+      "title": "Uzd vart 2",
+      "completed": false,
+      "author": "hh",
+      "priority": "low",
+      "user_id": "2",
+      "id": 8
     }
   ],
   "users": [
@@ -43,14 +55,19 @@
       "email": "labas-dienas@email.com"
     },
     {
-      "id": 2,
-      "name": "Test-user2",
-      "email": "labas123@gmail.com"
-    },
-    {
       "name": "User-3",
       "email": "333@main.com",
+      "id": 2
+    },
+    {
+      "name": "Egle",
+      "email": "Egle2345@gmail.com",
       "id": 3
+    },
+    {
+      "name": "User 4",
+      "email": "user44@mail.com",
+      "id": 4
     }
   ]
 }

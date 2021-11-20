@@ -6,6 +6,6 @@ export interface Task {
     author: string,
     completed: boolean // true arba false
     priority? : string
-    userId? : number
+    user_id? : number
     user? : User   // http://localhost:3000/tasks?_expand=user
 }

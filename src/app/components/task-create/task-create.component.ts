@@ -17,8 +17,8 @@ export class TaskCreateComponent implements OnInit {
     completed: false,
     author: "",
     priority: "",
-    
-  }; //userId: null
+    user_id: 0
+  };
 
   public priorties : string[] = ['low', 'medium', 'high'];
 
@@ -36,9 +36,9 @@ export class TaskCreateComponent implements OnInit {
   }
 
   getUsers() {
-this._userService.getUsers().subscribe((data: any) => {
-
-})
+    this._userService.getUsers().subscribe((data: any) => {
+      this.users = data;
+    })
   }
 
   taskCreate(form: NgForm) {

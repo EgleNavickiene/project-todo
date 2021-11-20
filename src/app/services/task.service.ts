@@ -15,11 +15,14 @@ export class TaskService {
 
   // Interface'o panaudojimas service dalyje
       //withUserData
-  getTasks() : Observable<Task[]> {
+  getTasks(withUserData : boolean = false) : Observable<Task[]> {
     let uri = this.apiUrl
     // Siuncama get uzklausa i API
 
-    //+expand...
+    if(withUserData) {
+      //pridedam prie uzklausos: _expand=user 
+      uri += "?_expand=user"
+    }
 
     // .get() - gauname duomenis is duombazes
     return this.http.get<Task[]>(uri);

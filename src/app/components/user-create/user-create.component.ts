@@ -12,7 +12,8 @@ export class UserCreateComponent implements OnInit {
 
   public user: User = {
     name: "",
-    email: ""
+    email: "",
+    // id?: number
   }
 
   @Output() newItemEvent = new EventEmitter();
